@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gamestore</groupId>
+  <artifactId>gamestore</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-starter-parent</artifactId>
+         <version>2.6.0</version> <!-- pom è un file di configurazine che puo essere usato per altri progetti maven -->
+              <relativePath/>  
+ <!-- Con <relativePath/> vuoto, stai dicendo a Maven di cercare il parent POM (in questo caso, spring-boot-starter-parent) nel repository centrale di Maven (come Maven Central), ignorando qualsiasi percorso locale. -->
+               </parent>
+ 
+  <properties>
+        <java.version>11</java.version>
+    </properties>
+
+ 
+ 
+ <dependencies>              
+     <dependency>
+        <groupId>org.springframework.boot</groupId> <!-- pacchetto con all interno springmvc tomcat embedded, jackso importante per sviluppare applicazioni web -->
+           <artifactId>spring-boot-starter-web</artifactId>
+              </dependency>   
+              
+              <dependency>
+                  <groupId>org.springframework.boot</groupId> <!--all interno di starter data jpa ci sta hibernate,jpa jpa permette di mappare le classi java al database  -->
+                        <artifactId>spring-boot-starter-data-jpa</artifactId>
+                             </dependency>
+                             
+                 
+                             <dependency>
+                                  <groupId>org.postgresql</groupId> <!-- Postgres, è un sistema di gestione di database relazionale (RDBMS) open-source. -->
+                                       <artifactId>postgresql</artifactId>
+                                             <scope>runtime</scope>
+                                                    </dependency>
+                             
+                         <dependency>
+                             <groupId>com.h2database</groupId> <!-- h2 è un database all interno in memoria e che funziona runtime -->
+                                 <artifactId>h2</artifactId>
+                                    <scope>runtime</scope>
+                                       </dependency>   
+    
+    
+    <dependency>
+         <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                    </dependency>
+   
+   </dependencies>
+    <build>
+		<plugins>
+		    <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>				
+			</plugin>										
+		</plugins>		
+	</build>
+  
+  
+</project>
